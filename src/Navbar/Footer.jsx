@@ -2,12 +2,7 @@ import React from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
-import { SlSocialYoutube } from "react-icons/sl";
-import { FaInstagram } from "react-icons/fa";
-import { CiTwitter, CiYoutube } from "react-icons/ci";
-import { CiFacebook } from "react-icons/ci";
-import { SiFiverr } from "react-icons/si";
-import { CiLinkedin } from "react-icons/ci";
+import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { CgMail } from "react-icons/cg";
 
 function Footer() {
@@ -15,61 +10,77 @@ function Footer() {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // Close mobile menu
     }
   };
+
   return (
-    <div className="bg-[#222831] h-[20rem] flex items-center justify-center flex-col gap-y-12 w-full">
-      <div className="flex items-center justify-center gap-8 w-full sm:flex-col flex-col md:flex-row">
+    <footer className="bg-[#1E1E2F] w-full py-16 flex flex-col items-center gap-10">
+      
+      {/* Navigation Links */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-[#EEEEEE]">
         <div
-          className=" text-[#EEEEEE] gap-1 flex text-1xl cursor-pointer hover:bg-gray-700 rounded-full p-1"
+          className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
           onClick={() => scrollToSection("home")}
         >
           <HomeOutlinedIcon />
-          <span className="text-[#EEEEEE] gap-1 flex text-1xl">Home</span>
+          <span>Home</span>
         </div>
         <div
-          className="text-[#EEEEEE] gap-1 flex text-1xl cursor-pointer cursor-pointer hover:bg-gray-700 rounded-full p-1"
+          className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
           onClick={() => scrollToSection("about")}
         >
           <PersonOutlineOutlinedIcon />
-          <span className="">About me</span>
+          <span>About Me</span>
         </div>
         <div
-          className="text-[#EEEEEE] gap-1 flex text-1xl cursor-pointer cursor-pointer hover:bg-gray-700 rounded-full p-1"
+          className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
           onClick={() => scrollToSection("contact")}
         >
-          <CallOutlinedIcon style={{ width: "25px", height: "22px" }} />
-          <span className="">Contact</span>
+          <CallOutlinedIcon />
+          <span>Contact</span>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-8">
-        <div className=" bg-gray-500/20 p-1 rounded-full w-[40px] h-[40px] flex  items-center justify-center  cursor-pointer">
-          {" "}
-          <CiFacebook className="w-8 h-[2.6rem] rounded-full text-white" />
-        </div>
-        <a href="mailto:jaweriab48@gmail.com">
-          <div className=" bg-gray-500/20 p-1 rounded-full w-[40px] h-[40px] flex  items-center justify-center  cursor-pointer">
-            <CgMail className="w-8 h-[1.9rem] text-white" />
-          </div>
+
+      {/* Social Links */}
+      <div className="flex items-center justify-center gap-6">
+        <a
+          href="mailto:irfanasgharmremind@gmail.com"
+          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
+        >
+          <CgMail className="text-white w-6 h-6" />
         </a>
         <a
-          href="https://www.linkedin.com/in/jaweria-bilal-25366727b"
+          href="https://www.linkedin.com/in/your-linkedin-profile"
           target="_blank"
           rel="noopener noreferrer"
+          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
         >
-          <div className=" bg-gray-500/20 p-1 rounded-full w-[40px] h-[40px] flex  items-center justify-center  cursor-pointer">
-            <CiLinkedin className="w-8 h-[2.6rem] text-white" />
-          </div>
+          <CiLinkedin className="text-white w-6 h-6" />
+        </a>
+        <a
+          href="https://twitter.com/your-twitter"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
+        >
+          <CiTwitter className="text-white w-6 h-6" />
+        </a>
+        <a
+          href="https://facebook.com/your-facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
+        >
+          <CiFacebook className="text-white w-6 h-6" />
         </a>
       </div>
-      <div className="flex justify-center self-end w-96 h-[2.6rem] items-center pr-12 ">
-        {" "}
-        <span className="flex text-[#EEEEEEBF] ">
-          Terms of Service - Privacy Policy
-        </span>
+
+      {/* Copyright / Terms */}
+      <div className="text-[#EEEEEE80] text-sm text-center mt-6">
+        &copy; {new Date().getFullYear()} Irfan Asghar | .NET Backend Developer <br />
+        Terms of Service - Privacy Policy
       </div>
-    </div>
+    </footer>
   );
 }
 

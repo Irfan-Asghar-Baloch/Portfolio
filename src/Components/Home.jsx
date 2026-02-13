@@ -5,11 +5,11 @@ import profileImg from "../assets/profile.png";
 
 const skills = [
   "ASP.NET Core",
-  "Web APIs",
+  "REST APIs",
   "SQL Server",
-  "Azure",
+  "JWT Authentication",
   "Clean Architecture",
-  "React",
+  "Azure",
 ];
 
 function Home() {
@@ -19,45 +19,50 @@ function Home() {
 
   return (
     <section
-      id="home"
-      className="bg-[#0B1120] text-white min-h-screen relative flex flex-col justify-center"
-    >
+  id="home"
+  className="min-h-screen flex items-center bg-[#0B1120] text-white scroll-mt-20"
+  style={{ paddingTop: "80px" }}
+>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:flex lg:items-center lg:justify-between gap-12">
-        {/* LEFT CONTENT */}
-        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            Building Scalable <br />
-            <span className="text-[#00E5D0]">.NET Applications</span>
+        
+        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+          
+         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+            Architecting High-Performance
+            <br />
+            <span className="text-[#00E5D0]">
+              Enterprise Backend Systems in .NET
+            </span>
           </h1>
 
+
+
           <p className="mt-4 text-xl sm:text-2xl font-semibold text-gray-300">
-            Full Stack .NET Developer
+            Backend .NET Engineer | Enterprise API Specialist
           </p>
 
           <p className="mt-6 text-gray-300 max-w-xl text-lg leading-relaxed">
-            I design and develop secure, high-performance web applications using{" "}
-            <strong>ASP.NET Core</strong>, <strong>Web APIs</strong>,{" "}
-            <strong>SQL Server</strong>, and <strong>Clean Architecture</strong>.
-            I build scalable solutions with clean, maintainable code.
+            I design and implement high-performance REST APIs, secure authentication systems,
+            and enterprise-grade backend architectures using ASP.NET Core and SQL Server.
+            Focused on scalability, performance optimization, and long-term maintainability.
           </p>
 
-          {/* Skills */}
-          <div className="flex flex-wrap gap-3 justify-center lg:justify-start mt-6">
+          <div className="flex flex-wrap gap-3 mt-6 justify-center lg:justify-start">
             {skills.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-1 rounded-full text-sm bg-white/5 border border-white/10 hover:bg-white/10 transition transform hover:scale-105"
+                className="px-4 py-1 rounded-full text-sm bg-white/5 border border-white/10"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => scrollToSection("projects")}
-              className="bg-[#00E5D0] hover:bg-cyan-400 text-black font-semibold px-8 h-12 rounded-lg shadow-lg transition transform hover:-translate-y-1"
+              className="bg-[#00E5D0] text-black font-semibold px-8 h-12 rounded-lg"
             >
               View Projects
             </button>
@@ -65,32 +70,43 @@ function Home() {
             <a
               href="/resume.pdf"
               download
-              className="flex items-center justify-center gap-2 px-8 h-12 rounded-lg border border-white/20 hover:bg-white/10 transition transform hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 px-8 h-12 rounded-lg border border-white/20"
             >
               Download Resume <SaveAltIcon fontSize="small" />
             </a>
           </div>
+
+          <div className="mt-16 flex gap-12 text-center">
+            <div>
+              <h3 className="text-2xl font-bold text-[#00E5D0]">1+ Years</h3>
+              <p className="text-gray-400 text-sm">Professional Experience</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-[#00E5D0]">5+</h3>
+              <p className="text-gray-400 text-sm">Enterprise Systems</p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-[#00E5D0]">100%</h3>
+              <p className="text-gray-400 text-sm">Backend Focused</p>
+            </div>
+          </div>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="flex-1 flex justify-center mt-12 lg:mt-0 animate-fade-in delay-150">
-          <div className="bg-[#111827] p-4 rounded-xl shadow-2xl border border-white/10 transition transform hover:scale-105">
+        <div className="flex-1 flex justify-center mt-12 lg:mt-0">
+          <div className="bg-[#111827] p-4 rounded-xl border border-white/10">
             <img
               src={profileImg}
               alt="Irfan Asghar"
-              className="w-72 sm:w-80 lg:w-[340px] rounded-lg object-cover"
-              loading="lazy"
+              className="w-72 sm:w-80 lg:w-[340px] rounded-lg"
             />
           </div>
         </div>
       </div>
 
-      {/* Scroll Button */}
-      <div className="flex justify-center mt-12 animate-bounce">
+      <div className="flex justify-center mt-12">
         <button
           onClick={() => scrollToSection("about")}
-          className="w-14 h-14 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center transition"
-          aria-label="Scroll to About section"
+          className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center"
         >
           <SouthIcon />
         </button>

@@ -1,67 +1,74 @@
 import React from "react";
-import projectarrow from "../assets/projectarrow.png";
-import UIUX from "../assets/recentWork1.png";
-import r2 from "../assets/r2.png";
-import r3 from "../assets/r2.1.png";
-import mobile1 from "../assets/m1.png";
-import mbobilemiddle from "../assets/middlem.png";
-import lastmobile from "../assets/endm.png";
+
+const projects = [
+  {
+    title: "Enterprise MIS Backend System",
+    description:
+      "Architected and implemented a scalable multi-department backend system using ASP.NET Core and SQL Server with Clean Architecture principles.",
+  },
+  {
+    title: "Electronic Medical Records (EMR)",
+    description:
+      "Developed secure healthcare APIs with JWT authentication and role-based authorization for managing sensitive patient records.",
+  },
+  {
+    title: "MaxChat – Real-Time Communication Platform",
+    description:
+      "Built scalable backend APIs supporting user authentication, messaging workflows, and optimized database handling for fast communication.",
+  },
+  {
+    title: "UAV Disaster Monitoring System (AI-Based)",
+    description:
+      "Designed backend APIs for processing drone-collected disaster data with intelligent AI integration for real-time emergency response.",
+  },
+  {
+    title: "Bone Fracture Detection (AI X-Ray Analysis)",
+    description:
+      "Integrated AI models with backend services to analyze X-ray images and deliver structured fracture detection results securely.",
+  },
+];
 
 function Project() {
   return (
-    <div className="bg-[#222831] py-10 px-4 md:px-10 border-b-2 border-[#EEEEEE1A]">
-      <div className="flex flex-col items-center">
-        {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold mt-4 text-center">
-          My recent <span className="text-[#00adb5]">works</span>
-        </h1>
+    <section
+      id="projects"
+      className="bg-[#0f172a] text-white py-28 px-6 scroll-mt-20"
+    >
+      <div className="max-w-7xl mx-auto">
+        
+        <h2 className="text-4xl font-bold text-center">
+          Enterprise <span className="text-[#00E5D0]">Case Studies</span>
+        </h2>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mt-6">
-          <button className="bg-[#00adb5] rounded-3xl w-24 h-10 text-white font-bold drop-shadow-lg">
-            All
-          </button>
-          <button className="bg-[#393E46BF] rounded-3xl w-24 h-10 text-white font-bold drop-shadow-md">
-            UI
-          </button>
-          <button className="bg-[#393E46BF] rounded-3xl w-24 h-10 text-white font-bold drop-shadow-md">
-            UX
-          </button>
-          <button className="bg-[#393E46BF] rounded-3xl w-40 h-10 text-white font-bold drop-shadow-md">
-            Web Design
-          </button>
+        <p className="text-slate-400 text-center max-w-2xl mx-auto mt-4">
+          Production-ready backend systems built with ASP.NET Core,
+          SQL Server, and AI integrations — focused on scalability,
+          security, and performance optimization.
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-[#1e293b] p-6 rounded-xl border border-white/10 hover:border-[#00E5D0] transition duration-300"
+            >
+              <h3 className="text-xl font-semibold text-[#00E5D0] mb-3">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {project.description}
+              </p>
+
+              <p className="text-green-400 text-xs mt-4">
+                ✔ Designed for scalability and production environments
+              </p>
+            </div>
+          ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-10 w-full">
-          {/* Card 1 */}
-          <div className="bg-gray-500/20 h-60 w-72 sm:w-80 flex justify-center items-center p-4 rounded-lg shadow-lg shadow-violet-500/50 ">
-            <img src={UIUX} alt="UIUX Project" className="max-h-full " />
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-gray-500/20 h-60 w-72 sm:w-80 flex justify-center items-center relative p-4 rounded-lg shadow-lg shadow-amber-500/50 ">
-            <img src={r3} alt="Overlay Project" className="w-52 z-10" />
-            <img
-              src={r2}
-              alt="Overlay"
-              className="w-52 absolute top-4 left-8 z-0 opacity-80"
-            />
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-gray-500/20 h-60 w-72 sm:w-80 flex justify-center items-center relative p-4 rounded-lg shadow-lg shadow-cyan-500/50 ">
-            <img src={mobile1} alt="Mobile 1" className="w-20 z-10" />
-            <img
-              src={mbobilemiddle}
-              alt="Middle"
-              className="w-20 z-20 scale-110 relative -top-1"
-            />
-            <img src={lastmobile} alt="End" className="w-20 z-10" />
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
