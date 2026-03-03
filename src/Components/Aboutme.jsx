@@ -1,40 +1,80 @@
-import React from "react";
+// src/Components/Aboutme.jsx
+import React, { useEffect, useRef, useState } from "react";
 import Aboutimg from "../assets/imgAbout.png";
 
 function Aboutme() {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  // Scroll-triggered fade-in using IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const skills = [
+    "RESTful API Architecture",
+    "Clean Architecture",
+    "JWT & Role Management",
+    "Optimized Databases",
+    "Secure Data Handling",
+    "Scalable Enterprise Systems",
+  ];
+
   return (
     <section
       id="about"
-      className="bg-[#222831] text-white px-6 md:px-12 py-20"
+      ref={sectionRef}
+      className="bg-[#222831] text-white px-6 md:px-12 py-20 min-h-screen flex flex-col justify-center"
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        
-        <div className="flex-1">
+        {/* Text Section */}
+        <div
+          className={`flex-1 transition-all duration-1000 ease-out transform ${
+            visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+          }`}
+        >
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Backend <span className="text-[#00ADB5]">Expertise</span>
+            Backend{" "}
+            <span className="bg-gradient-to-r from-[#00E5D0] to-[#00ADB5] text-transparent bg-clip-text">
+              Expertise
+            </span>
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Backend-focused .NET engineer with experience building enterprise systems,
-            healthcare platforms, and data-intensive applications. Specialized in designing
-            scalable REST APIs, secure authentication systems, and structured architectures.
+            Backend-focused .NET engineer with experience building enterprise
+            systems, healthcare platforms, and data-intensive applications.
+            Specialized in designing scalable REST APIs, secure authentication
+            systems, and structured architectures.
           </p>
 
-          <div className="grid grid-cols-2 gap-4 text-sm text-gray-400">
-            <div>✔ RESTful API Architecture</div>
-            <div>✔ Clean Architecture</div>
-            <div>✔ JWT & Role Management</div>
-            <div>✔ SQL Performance Optimization</div>
-            <div>✔ Secure Data Handling</div>
-            <div>✔ Scalable System Design</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-400">
+            {skills.map((skill) => (
+              <div
+                key={skill}
+                className="flex items-center gap-2 hover:text-[#00ADB5] transition-colors duration-300"
+              >
+                <span className="text-[#00E5D0] font-bold">✔</span>
+                {skill}
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="flex-1 flex justify-center">
+        {/* Image Section */}
+        <div
+          className={`flex-1 flex justify-center transition-all duration-1000 ease-out transform ${
+            visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+          }`}
+        >
           <img
             src={Aboutimg}
-            alt="Backend Development"
-            className="w-80 rounded-xl"
+            alt="Irfan Asghar Backend Development"
+            className="w-80 rounded-xl shadow-xl border border-white/10 hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>

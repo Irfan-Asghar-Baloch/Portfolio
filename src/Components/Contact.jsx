@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import last from "../assets/last.png";         // your image
+import { motion } from "framer-motion";
+import last from "../assets/last.png";
 import SendIcon from "@mui/icons-material/Send";
 import keyboardIcon from "../assets/keyboard.png";
 import msgeIcon from "../assets/msgeIcon.png";
@@ -46,15 +47,14 @@ function Contact() {
 
     try {
       await emailjs.send(
-        "service_a3hrtyd",       // Your Service ID
-        "template_8vwmqbl",      // Your Template ID
+        "service_a3hrtyd",
+        "template_8vwmqbl",
         templateParams,
-        "NMEQv3vLnm1K0IIPZ"      // Your Public Key
+        "NMEQv3vLnm1K0IIPZ"
       );
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("EmailJS Error:", error);
       setStatus("Something went wrong. Please try again.");
     }
 
@@ -62,36 +62,61 @@ function Contact() {
   };
 
   return (
-    <section className="bg-[#1E1E2F] w-full py-20 px-6 border-t border-gray-700">
-      {/* Top Keyboard Icon */}
-      <div className="flex justify-center mb-10">
+    <section
+      id="contact"
+      className="bg-[#1E1E2F] w-full py-20 px-6 border-t border-gray-700 min-h-screen"
+    >
+      {/* Top Icon Animation */}
+      <motion.div
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="flex justify-center mb-10"
+      >
         <img src={keyboardIcon} alt="Keyboard Icon" className="w-28 opacity-80" />
-      </div>
+      </motion.div>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
         
-        {/* Left Side - Text + Image */}
-        <div className="text-center lg:text-left max-w-lg">
-         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-          Need a Reliable <span className="text-[#00ADB5]">Backend Engineer?</span>
-        </h2>
+        {/* LEFT SIDE */}
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center lg:text-left max-w-lg"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Need a Reliable <span className="text-[#00ADB5]">Backend Engineer?</span>
+          </h2>
 
           <p className="text-gray-400 mt-6 text-lg">
             If you're building an enterprise system, healthcare platform, or scalable API —
-            let's discuss how I can architect and implement a secure, high-performance backend for your project.
+            let's discuss how I can architect and implement a secure, high-performance backend.
           </p>
 
-          <div className="mt-10 shadow-xl shadow-cyan-500/30 rounded-2xl">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="mt-10 shadow-xl shadow-cyan-500/30 rounded-2xl"
+          >
             <img src={last} alt="Contact Visual" className="w-72 mx-auto" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Side - Form */}
-        <div className="w-full max-w-xl bg-[#2A2A40] p-8 rounded-3xl shadow-2xl">
+        {/* RIGHT SIDE FORM */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="w-full max-w-xl bg-[#2A2A40] p-8 rounded-3xl shadow-2xl"
+        >
           <div className="flex flex-col gap-5">
-            
-            {/* Name */}
-            <input
+
+            <motion.input
+              whileFocus={{ scale: 1.03 }}
               type="text"
               name="name"
               value={formData.name}
@@ -100,8 +125,8 @@ function Contact() {
               className="bg-[#3A3A55] text-white rounded-xl px-4 h-12 focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
             />
 
-            {/* Email */}
-            <input
+            <motion.input
+              whileFocus={{ scale: 1.03 }}
               type="email"
               name="email"
               value={formData.email}
@@ -110,8 +135,8 @@ function Contact() {
               className="bg-[#3A3A55] text-white rounded-xl px-4 h-12 focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
             />
 
-            {/* Message */}
-            <textarea
+            <motion.textarea
+              whileFocus={{ scale: 1.03 }}
               name="message"
               value={formData.message}
               onChange={handleChange}
@@ -119,29 +144,40 @@ function Contact() {
               className="bg-[#3A3A55] text-white rounded-xl px-4 py-3 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
             />
 
-            {/* Status */}
             {status && (
-              <p className={`text-sm text-center ${status === "Message sent successfully!" ? "text-green-400" : "text-red-400"}`}>
+              <p
+                className={`text-sm text-center ${
+                  status === "Message sent successfully!"
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+              >
                 {status}
               </p>
             )}
 
-            {/* Send Button */}
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={sendEmail}
               disabled={loading}
-              className="bg-[#00ADB5] h-12 text-white font-semibold rounded-xl flex items-center justify-center gap-2 transition-all duration-300 hover:bg-cyan-500 hover:scale-105 disabled:opacity-70"
+              className="bg-[#00ADB5] h-12 text-white font-semibold rounded-xl flex items-center justify-center gap-2 transition-all duration-300 hover:bg-cyan-500 disabled:opacity-70"
             >
               {loading ? "Sending..." : "Send Message"}
               <SendIcon />
-            </button>
+            </motion.button>
           </div>
 
-          {/* Bottom Message Icon */}
-          <div className="flex justify-center mt-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-6"
+          >
             <img src={msgeIcon} alt="Message Icon" className="w-8 opacity-70" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,9 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { CgMail } from "react-icons/cg";
+import { AiFillInstagram } from "react-icons/ai";
+import { SiTiktok } from "react-icons/si";
 
 function Footer() {
   const scrollToSection = (id) => {
@@ -13,74 +16,94 @@ function Footer() {
     }
   };
 
+  const navLinks = [
+    { id: "home", icon: <HomeOutlinedIcon />, label: "Home" },
+    { id: "about", icon: <PersonOutlineOutlinedIcon />, label: "About Me" },
+    { id: "contact", icon: <CallOutlinedIcon />, label: "Contact" },
+  ];
+
+  const socialLinks = [
+    {
+      href: "mailto:irfankkhan255@gmail.com",
+      icon: <CgMail />,
+      label: "Email",
+    },
+    {
+      href: "https://www.linkedin.com/in/irfan-asghar-aa4a63354/",
+      icon: <CiLinkedin />,
+      label: "LinkedIn",
+    },
+    {
+      href: "https://www.instagram.com/itx_v_ee_r001/",
+      icon: <AiFillInstagram />,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.tiktok.com/@v_e_e_r___00",
+      icon: <SiTiktok />,
+      label: "TikTok",
+    },
+    {
+      href: "https://www.facebook.com/irfan.khan.676395",
+      icon: <CiFacebook />,
+      label: "Facebook",
+    },
+    
+  ];
+
   return (
-    <footer className="bg-[#1E1E2F] w-full py-16 flex flex-col items-center gap-10">
-      
-      {/* Navigation Links */}
+    <motion.footer
+      id="footer"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="bg-[#1E1E2F] w-full py-16 flex flex-col items-center gap-10 border-t border-gray-700"
+    >
+      {/* Navigation */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-[#EEEEEE]">
-        <div
-          className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
-          onClick={() => scrollToSection("home")}
-        >
-          <HomeOutlinedIcon />
-          <span>Home</span>
-        </div>
-        <div
-          className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
-          onClick={() => scrollToSection("about")}
-        >
-          <PersonOutlineOutlinedIcon />
-          <span>About Me</span>
-        </div>
-        <div
-          className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
-          onClick={() => scrollToSection("contact")}
-        >
-          <CallOutlinedIcon />
-          <span>Contact</span>
-        </div>
+        {navLinks.map((link) => (
+          <motion.div
+            key={link.id}
+            whileHover={{ x: 5 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="flex items-center gap-2 cursor-pointer hover:text-[#00ADB5] transition-colors"
+            onClick={() => scrollToSection(link.id)}
+          >
+            {link.icon}
+            <span>{link.label}</span>
+          </motion.div>
+        ))}
       </div>
 
-      {/* Social Links */}
-      <div className="flex items-center justify-center gap-6">
-        <a
-          href="mailto:irfanasgharmremind@gmail.com"
-          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-        >
-          <CgMail className="text-white w-6 h-6" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/your-linkedin-profile"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-        >
-          <CiLinkedin className="text-white w-6 h-6" />
-        </a>
-        <a
-          href="https://twitter.com/your-twitter"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-        >
-          <CiTwitter className="text-white w-6 h-6" />
-        </a>
-        <a
-          href="https://facebook.com/your-facebook"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-500/20 p-2 rounded-full w-12 h-12 flex items-center justify-center hover:bg-[#00ADB5] transition-colors"
-        >
-          <CiFacebook className="text-white w-6 h-6" />
-        </a>
+      {/* Social Icons */}
+      <div className="flex items-center justify-center gap-6 flex-wrap">
+        {socialLinks.map((social, idx) => (
+          <motion.a
+            key={idx}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className="bg-gray-500/20 p-3 rounded-full w-12 h-12 flex items-center justify-center 
+                       hover:bg-[#00ADB5] transition-all duration-300 shadow-md hover:shadow-cyan-500/40"
+            aria-label={social.label}
+          >
+            {React.cloneElement(social.icon, {
+              className: "text-white w-6 h-6",
+            })}
+          </motion.a>
+        ))}
       </div>
 
-      {/* Copyright / Terms */}
-      <div className="text-[#EEEEEE80] text-sm text-center mt-6">
-        &copy; {new Date().getFullYear()} Irfan Asghar | .NET Backend Developer <br />
-        Terms of Service - Privacy Policy
+      {/* Copyright */}
+      <div className="text-[#EEEEEE80] text-sm text-center mt-6 leading-relaxed">
+        © {new Date().getFullYear()} <span className="text-[#00ADB5] font-medium">Irfan Asghar</span> <br />
+        .NET Backend Engineer | Building Secure & Scalable Systems <br />
+        All Rights Reserved.
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
