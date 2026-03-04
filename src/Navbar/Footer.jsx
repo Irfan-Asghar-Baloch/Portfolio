@@ -7,6 +7,7 @@ import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { CgMail } from "react-icons/cg";
 import { AiFillInstagram } from "react-icons/ai";
 import { SiTiktok } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 
 function Footer() {
   const scrollToSection = (id) => {
@@ -47,7 +48,13 @@ function Footer() {
       href: "https://www.facebook.com/irfan.khan.676395",
       icon: <CiFacebook />,
       label: "Facebook",
-    },
+    }, 
+     {
+    href: "https://github.com/Irfan-Asghar-Baloch",
+    icon: <FaGithub />, // import FaGithub from react-icons/fa
+    label: "GitHub",
+  },
+   
     
   ];
 

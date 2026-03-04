@@ -3,13 +3,23 @@ import React from "react";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import profileImg from "../assets/profile.png";
 
+// const skills = [
+//   "ASP.NET Core",
+//   "REST APIs",
+//   "SQL Server",
+//   "JWT Authentication",
+//   "Clean Architecture",
+//   "Azure",
+// ];
 const skills = [
-  "ASP.NET Core",
-  "REST APIs",
-  "SQL Server",
-  "JWT Authentication",
+  "REST API Development",
+  "Authentication & Security",
+  "Database Optimization",
+  "MVC Applications",
+  "C# Desktop Applications",
   "Clean Architecture",
-  "Azure",
+  "Performance Optimization",
+  "Unit Testing & Debugging",
 ];
 
 export default function Home() {
