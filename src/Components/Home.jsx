@@ -77,7 +77,7 @@ export default function Home() {
             </button>
 
             <a
-              href="/resume.pdf"
+              href="/Portfolio/resume.pdf"
               download
               className="flex items-center justify-center gap-2 px-8 h-12 rounded-lg border border-white/20 hover:bg-white/10 transition"
             >
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="mt-16 flex flex-col sm:flex-row gap-12 text-center justify-center">
+          <div className="mt-16 flex flex-col sm:flex-row gap-6 text-center justify-center">
             <div>
               <h3 className="text-2xl font-bold text-[#00E5D0]">1+ Years</h3>
               <p className="text-gray-400 text-sm">
