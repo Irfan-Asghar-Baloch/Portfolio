@@ -1,34 +1,34 @@
-# Irfan Asghar — Portfolio
+# Irfan Asghar — Engineering Portfolio
 
-React + Vite portfolio updated for Full-Stack AI Engineering, with a .NET backend foundation.
+A responsive React + Vite portfolio with a charcoal and teal design, featured AI workflow, project filters, grouped expertise, experience and direct contact links.
 
-## Run locally
+## Local development
 
 ```bash
 npm ci
 npm run dev
 ```
 
-## Production
+## Build and verify
 
 ```bash
+npm run lint
 npm run build
 npm run preview
 ```
 
-Publish the contents of `dist` using your existing hosting provider. Relative asset paths support the existing GitHub Pages `/Portfolio/` path. Tailwind is compiled locally; no styling CDN is required.
+Publish `dist` to the existing `gh-pages` branch. The public site uses that branch, not `main`. Relative paths support the GitHub Pages `/Portfolio/` URL.
 
-## Update notes
+## Content and customization
 
-- Updated hero, biography, services, footer and page metadata for .NET, Python, React, LLMs and AI agents.
-- Updated experience to 2+ years and added both MaxRemind roles without inventing employment dates.
-- Added an experience section and current EHR demo agent and LLM support API work. Ongoing projects are explicitly identified.
-- Replaced unverified case-study outcome figures and compliance claims with concrete contributions.
-- Kept the existing visual style, portraits and contact/social details.
-- Corrected the EmailJS import to the installed SDK. Existing EmailJS settings are retained; live message delivery requires your service to remain configured and was not tested.
-- Retained the old resume as “Previous Resume”; replace `public/resume.pdf` with your updated CV before publishing.
-- Removed editor caches from the deliverable.
+- `src/App.jsx`: profile, work, expertise, experience and contact details.
+- `src/App.css`: responsive page layout.
+- `src/index.css`: global styles and accessibility defaults.
+- `src/assets/profile.png`: original portrait.
+- Employer projects are high-level descriptions; ongoing AI work is labeled.
+- The old PDF is retained in `public` but is not promoted in the redesign. Replace it with an updated CV before adding a download link.
+- Contact uses email and LinkedIn links; copy email requires clipboard support. No message delivery service is needed.
 
 ## Validation
 
-`npm run build` and `npm run lint` pass. Browser visual testing could not run because a browser executable was unavailable in this environment. The contact form was not submitted during verification.
+Production build and ESLint pass. Headless browser checks at 1440px and 390px confirm no horizontal overflow, working project filters, mobile menu navigation and no runtime errors. Desktop and mobile screenshots were reviewed.
