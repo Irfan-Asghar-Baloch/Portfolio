@@ -1,5 +1,4 @@
 // src/components/Home.jsx
-import React from "react";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import profileImg from "../assets/profile.png";
 
@@ -15,11 +14,11 @@ const skills = [
   "REST API Development",
   "Authentication & Security",
   "Database Optimization",
-  "MVC Applications",
-  "C# Desktop Applications",
+  "Python & FastAPI",
+  "React Applications",
   "Clean Architecture",
   "Performance Optimization",
-  "Unit Testing & Debugging",
+  "LLMs & AI Agents",
 ];
 
 export default function Home() {
@@ -37,22 +36,19 @@ export default function Home() {
         {/* Text */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-            Architecting High-Performance
+            Building Enterprise Software
             <br />
             <span className="text-[#00E5D0]">
-              Enterprise Backend Systems in .NET
+              and AI-Powered Workflows
             </span>
           </h1>
 
           <p className="mt-4 text-xl sm:text-2xl font-semibold text-gray-300">
-            Backend .NET Engineer | Enterprise API Specialist
+            Full-Stack AI Engineer | .NET, Python & React
           </p>
 
           <p className="mt-6 text-gray-300 max-w-xl text-lg leading-relaxed">
-            I help businesses build secure and scalable backend systems that
-            automate workflows, improve performance, and reduce operational
-            costs using ASP.NET Core and SQL Server. Focused on scalability,
-            performance optimization, and long-term maintainability.
+            I’m Irfan Asghar, a developer with 2+ years of professional .NET experience, now also working in AI engineering at MaxRemind. I build enterprise APIs, full-stack applications and AI agents that connect software to real business workflows.
           </p>
 
           {/* Skills */}
@@ -77,38 +73,38 @@ export default function Home() {
             </button>
 
             <a
-              href="/Portfolio/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               download
               className="flex items-center justify-center gap-2 px-8 h-12 rounded-lg border border-white/20 hover:bg-white/10 transition"
             >
-              Download Resume <SaveAltIcon fontSize="small" />
+              Previous Resume <SaveAltIcon fontSize="small" />
             </a>
           </div>
 
           {/* Stats */}
           <div className="mt-16 flex flex-col sm:flex-row gap-6 text-center justify-center">
             <div>
-              <h3 className="text-2xl font-bold text-[#00E5D0]">1+ Years</h3>
+              <h3 className="text-2xl font-bold text-[#00E5D0]">2+ Years</h3>
               <p className="text-gray-400 text-sm">
                 Professional Backend Experience
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-[#00E5D0]">5+</h3>
+              <h3 className="text-2xl font-bold text-[#00E5D0]">AI Agents</h3>
               <p className="text-gray-400 text-sm">
-                Production-Ready Systems Delivered
+                Voice & Workflow Automation
               </p>
             </div>
             <div>
               <h3 className="text-2xl font-bold text-[#00E5D0]">30%</h3>
               <p className="text-gray-400 text-sm">
-                Avg Performance Optimization Achieved
+                SQL Performance Improvement
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-[#00E5D0]">50K+</h3>
+              <h3 className="text-2xl font-bold text-[#00E5D0]">3.96/4.0</h3>
               <p className="text-gray-400 text-sm">
-                Records Handled in Scalable APIs
+                BSCS · Gold Medalist
               </p>
             </div>
           </div>

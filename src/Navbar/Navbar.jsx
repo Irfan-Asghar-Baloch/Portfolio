@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const sections = ["home", "about", "services", "projects", "contact"];
+  const sections = ["home", "about", "services", "experience", "projects", "contact"];
 
   // Scroll detection for active link + navbar background
   useEffect(() => {
@@ -14,7 +14,7 @@ const Navbar = () => {
 
       setIsScrolled(window.scrollY > 20);
 
-      for (let sec of sections) {
+      for (let sec of ["home", "about", "services", "experience", "projects", "contact"]) {
         const el = document.getElementById(sec);
         if (
           el &&
@@ -64,7 +64,7 @@ const Navbar = () => {
             Irfan <span className="text-[#00E5D0]">Asghar</span>
           </div>
           <div className="text-xs text-slate-400 font-normal tracking-wider">
-            Backend .NET Engineer
+            Full-Stack AI Engineer
           </div>
         </div>
 
@@ -94,6 +94,7 @@ const Navbar = () => {
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           <svg
             className="w-6 h-6"

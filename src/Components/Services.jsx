@@ -1,5 +1,4 @@
 // src/Components/Services.jsx
-import React from "react";
 import { FaDatabase, FaLock, FaNetworkWired, FaDesktop, FaCode, FaCogs } from "react-icons/fa";
 
 const services = [
@@ -25,16 +24,16 @@ const services = [
     gradient: "from-[#FFD700] to-[#FFA500]",
   },
   {
-    title: "MVC Web Applications",
+    title: "Full-Stack Applications",
     description:
-      "Developed enterprise-grade web applications using ASP.NET MVC following clean architecture principles and maintainable code standards.",
+      "Build React interfaces connected to .NET and Python APIs, with authentication, dashboards and maintainable application architecture.",
     icon: <FaCode size={32} />,
     gradient: "from-[#6A5ACD] to-[#483D8B]",
   },
   {
-    title: "C# Desktop Applications",
+    title: "AI Agents & LLM Integration",
     description:
-      "Built reliable and user-focused desktop applications using WinForms and WPF to streamline business operations and automation processes.",
+      "Integrate LLMs, structured responses, retrieval and speech services into practical workflows. Current focus: an AI-assisted EHR meeting demo.",
     icon: <FaDesktop size={32} />,
     gradient: "from-[#00CED1] to-[#20B2AA]",
   },
@@ -55,7 +54,7 @@ function Services() {
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12">
-          Backend <span className="text-[#00E5D0]">Services</span>
+          Engineering <span className="text-[#00E5D0]">Services</span>
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">

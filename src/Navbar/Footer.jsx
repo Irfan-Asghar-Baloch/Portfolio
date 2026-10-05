@@ -1,9 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
-import { CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
+import { CiFacebook, CiLinkedin } from "react-icons/ci";
 import { CgMail } from "react-icons/cg";
 import { AiFillInstagram } from "react-icons/ai";
 import { SiTiktok } from "react-icons/si";
@@ -59,7 +59,7 @@ function Footer() {
   ];
 
   return (
-    <motion.footer
+    <Motion.footer
       id="footer"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ function Footer() {
       {/* Navigation */}
       <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-[#EEEEEE]">
         {navLinks.map((link) => (
-          <motion.div
+          <Motion.div
             key={link.id}
             whileHover={{ x: 5 }}
             transition={{ type: "spring", stiffness: 200 }}
@@ -79,14 +79,14 @@ function Footer() {
           >
             {link.icon}
             <span>{link.label}</span>
-          </motion.div>
+          </Motion.div>
         ))}
       </div>
 
       {/* Social Icons */}
       <div className="flex items-center justify-center gap-6 flex-wrap">
         {socialLinks.map((social, idx) => (
-          <motion.a
+          <Motion.a
             key={idx}
             href={social.href}
             target="_blank"
@@ -100,17 +100,17 @@ function Footer() {
             {React.cloneElement(social.icon, {
               className: "text-white w-6 h-6",
             })}
-          </motion.a>
+          </Motion.a>
         ))}
       </div>
 
       {/* Copyright */}
       <div className="text-[#EEEEEE80] text-sm text-center mt-6 leading-relaxed">
         © {new Date().getFullYear()} <span className="text-[#00ADB5] font-medium">Irfan Asghar</span> <br />
-        .NET Backend Engineer | Building Secure & Scalable Systems <br />
+        Full-Stack AI Engineer | .NET, Python & React <br />
         All Rights Reserved.
       </div>
-    </motion.footer>
+    </Motion.footer>
   );
 }
 

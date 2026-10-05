@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion as Motion } from "framer-motion";
 import last from "../assets/last.png";
 import SendIcon from "@mui/icons-material/Send";
 import keyboardIcon from "../assets/keyboard.png";
 import msgeIcon from "../assets/msgeIcon.png";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 
 function Contact() {
   const [loading, setLoading] = useState(false);
@@ -54,7 +54,7 @@ function Contact() {
       );
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch {
       setStatus("Something went wrong. Please try again.");
     }
 
@@ -67,7 +67,7 @@ function Contact() {
       className="bg-[#1E1E2F] w-full py-20 px-6 border-t border-gray-700 min-h-screen"
     >
       {/* Top Icon Animation */}
-      <motion.div
+      <Motion.div
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -75,12 +75,12 @@ function Contact() {
         className="flex justify-center mb-10"
       >
         <img src={keyboardIcon} alt="Keyboard Icon" className="w-28 opacity-80" />
-      </motion.div>
+      </Motion.div>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-6xl mx-auto">
         
         {/* LEFT SIDE */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -88,25 +88,25 @@ function Contact() {
           className="text-center lg:text-left max-w-lg"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Need a Reliable <span className="text-[#00ADB5]">Backend Engineer?</span>
+            Need a Reliable <span className="text-[#00ADB5]">Full-Stack AI Engineer?</span>
           </h2>
 
           <p className="text-gray-400 mt-6 text-lg">
             If you're building an enterprise system, healthcare platform, or scalable API —
-            let's discuss how I can architect and implement a secure, high-performance backend.
+            let's discuss the APIs, interfaces and AI integrations that can make your workflow more useful.
           </p>
 
-          <motion.div
+          <Motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 200 }}
             className="mt-10 shadow-xl shadow-cyan-500/30 rounded-2xl"
           >
             <img src={last} alt="Contact Visual" className="w-72 mx-auto" />
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
 
         {/* RIGHT SIDE FORM */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -115,7 +115,7 @@ function Contact() {
         >
           <div className="flex flex-col gap-5">
 
-            <motion.input
+            <Motion.input
               whileFocus={{ scale: 1.03 }}
               type="text"
               name="name"
@@ -125,7 +125,7 @@ function Contact() {
               className="bg-[#3A3A55] text-white rounded-xl px-4 h-12 focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
             />
 
-            <motion.input
+            <Motion.input
               whileFocus={{ scale: 1.03 }}
               type="email"
               name="email"
@@ -135,7 +135,7 @@ function Contact() {
               className="bg-[#3A3A55] text-white rounded-xl px-4 h-12 focus:outline-none focus:ring-2 focus:ring-[#00ADB5]"
             />
 
-            <motion.textarea
+            <Motion.textarea
               whileFocus={{ scale: 1.03 }}
               name="message"
               value={formData.message}
@@ -156,7 +156,7 @@ function Contact() {
               </p>
             )}
 
-            <motion.button
+            <Motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={sendEmail}
@@ -165,10 +165,10 @@ function Contact() {
             >
               {loading ? "Sending..." : "Send Message"}
               <SendIcon />
-            </motion.button>
+            </Motion.button>
           </div>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -176,8 +176,8 @@ function Contact() {
             className="flex justify-center mt-6"
           >
             <img src={msgeIcon} alt="Message Icon" className="w-8 opacity-70" />
-          </motion.div>
-        </motion.div>
+          </Motion.div>
+        </Motion.div>
       </div>
     </section>
   );

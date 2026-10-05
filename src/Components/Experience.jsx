@@ -1,0 +1,7 @@
+const roles = [
+  { title: 'AI Engineer', label: 'Additional current role', text: 'Developing an AI-assisted EHR demo agent with meeting integrations, sequential voice playback and screen-sharing workflows. Ongoing work includes EHR login, dashboard navigation and explanation.', skills: 'LLM integration · Speech services · AI agents · Workflow automation' },
+  { title: '.NET Backend Developer', label: 'Current role · 2+ years professional .NET experience', text: 'Backend contributions across MIS, CRM, Provider Portal, Union Health System and MaxChat. Building APIs, SQL workflows, reporting, authentication and enterprise integrations.', skills: 'ASP.NET Core · SQL Server · Dapper · REST APIs · SignalR' },
+];
+export default function Experience() {
+  return <section id="experience" className="bg-[#0B1120] text-white py-24 px-6 scroll-mt-20"><div className="max-w-7xl mx-auto"><p className="text-[#00E5D0] text-sm tracking-widest mb-4">PROFESSIONAL EXPERIENCE</p><h2 className="text-4xl font-bold mb-10">Building at <span className="text-[#00E5D0]">MaxRemind</span></h2><div className="grid md:grid-cols-2 gap-8">{roles.map(role => <article key={role.title} className="p-8 rounded-xl border border-white/10 bg-[#111827]"><p className="text-[#00E5D0] text-xs mb-3">{role.label}</p><h3 className="text-2xl font-semibold">{role.title}</h3><p className="text-slate-400 mt-2">MaxRemind Inc.</p><p className="text-gray-300 leading-relaxed mt-6">{role.text}</p><p className="text-slate-400 text-sm mt-6">{role.skills}</p></article>)}</div></div></section>;
+}

@@ -1,5 +1,4 @@
 // src/Components/WhyWorkWithMe.jsx
-import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
 const points = [
@@ -23,8 +22,7 @@ function WhyWorkWithMe() {
         </h2>
 
         <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-          I focus on delivering scalable, secure, and production-ready backend
-          systems that solve real business problems — not just writing code.
+          I focus on delivering scalable, secure software and AI integrations that solve real business workflow problems.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mt-12 text-left">

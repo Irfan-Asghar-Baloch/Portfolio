@@ -1,5 +1,5 @@
 // src/Components/Aboutme.jsx
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Aboutimg from "../assets/imgAbout.png";
 
 function Aboutme() {
@@ -20,9 +20,9 @@ function Aboutme() {
     "RESTful API Architecture",
     "Clean Architecture",
     "JWT & Role Management",
-    "Optimized Databases",
-    "Secure Data Handling",
-    "Scalable Enterprise Systems",
+    "Python, FastAPI & LLMs",
+    "React & Full-Stack Development",
+    "AI Agents & Enterprise Automation",
   ];
 
   return (
@@ -39,17 +39,14 @@ function Aboutme() {
           }`}
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Backend{" "}
+            Full-Stack & AI{" "}
             <span className="bg-gradient-to-r from-[#00E5D0] to-[#00ADB5] text-transparent bg-clip-text">
               Expertise
             </span>
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            Backend-focused .NET engineer with experience building enterprise
-            systems, healthcare platforms, and data-intensive applications.
-            Specialized in designing scalable REST APIs, secure authentication
-            systems, and structured architectures.
+            Full-Stack AI Engineer with a strong .NET backend foundation and 2+ years of professional experience. At MaxRemind, I work on enterprise and healthcare systems while developing AI-assisted EHR demo workflows. My toolkit includes C#, Python, React, LLM integrations and workflow automation. I am building toward Forward Deployed Engineering by connecting technology to practical business needs.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-400">

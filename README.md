@@ -1,12 +1,34 @@
-# React + Vite
+# Irfan Asghar — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite portfolio updated for Full-Stack AI Engineering, with a .NET backend foundation.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm ci
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Production
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+npm run preview
+```
+
+Publish the contents of `dist` using your existing hosting provider. Relative asset paths support the existing GitHub Pages `/Portfolio/` path. Tailwind is compiled locally; no styling CDN is required.
+
+## Update notes
+
+- Updated hero, biography, services, footer and page metadata for .NET, Python, React, LLMs and AI agents.
+- Updated experience to 2+ years and added both MaxRemind roles without inventing employment dates.
+- Added an experience section and current EHR demo agent and LLM support API work. Ongoing projects are explicitly identified.
+- Replaced unverified case-study outcome figures and compliance claims with concrete contributions.
+- Kept the existing visual style, portraits and contact/social details.
+- Corrected the EmailJS import to the installed SDK. Existing EmailJS settings are retained; live message delivery requires your service to remain configured and was not tested.
+- Retained the old resume as “Previous Resume”; replace `public/resume.pdf` with your updated CV before publishing.
+- Removed editor caches from the deliverable.
+
+## Validation
+
+`npm run build` and `npm run lint` pass. Browser visual testing could not run because a browser executable was unavailable in this environment. The contact form was not submitted during verification.

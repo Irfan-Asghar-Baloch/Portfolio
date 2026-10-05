@@ -1,56 +1,11 @@
-import React from "react";
+
 
 const projects = [
-  {
-    title: "Enterprise MIS Backend System",
-    description:
-      "Architected and implemented a scalable multi-department backend system using ASP.NET Core and SQL Server with Clean Architecture principles.",
-    impact: [
-      "Reduced manual reporting time by approximately 40%",
-      "Centralized operations across multiple departments",
-      "Designed to support 1000+ concurrent users",
-    ],
-  },
-  {
-    title: "Electronic Medical Records (EMR)",
-    description:
-      "Developed secure healthcare APIs with JWT authentication and role-based authorization for managing sensitive patient records.",
-    impact: [
-      "Improved patient data access efficiency by 35%",
-      "Ensured HIPAA-aligned data security practices",
-      "Minimized unauthorized access risks through strict RBAC",
-    ],
-  },
-  {
-    title: "MaxChat – Real-Time Communication Platform",
-    description:
-      "Built scalable backend APIs supporting user authentication, messaging workflows, and optimized database handling for fast communication.",
-    impact: [
-      "Enabled real-time messaging with minimal latency",
-      "Optimized database queries improving response time by 30%",
-      "Designed for scalable user growth",
-    ],
-  },
-  {
-    title: "UAV Disaster Monitoring System (AI-Based)",
-    description:
-      "Designed backend APIs for processing drone-collected disaster data with intelligent AI integration for real-time emergency response.",
-    impact: [
-      "Accelerated disaster data processing time by 50%",
-      "Enabled real-time emergency response coordination",
-      "Integrated AI for faster decision-making insights",
-    ],
-  },
-  {
-    title: "Bone Fracture Detection (AI X-Ray Analysis)",
-    description:
-      "Integrated AI models with backend services to analyze X-ray images and deliver structured fracture detection results securely.",
-    impact: [
-      "Improved diagnostic workflow efficiency",
-      "Reduced manual analysis workload for radiologists",
-      "Delivered secure and structured medical reporting",
-    ],
-  },
+  {title: "EHR AI Demo Agent — In Development", description: "An AI-assisted meeting demo at MaxRemind connecting voice, meeting integrations and EHR screen sharing.", impact: ["Sequential greeting and introduction audio with speech-provider fallbacks", "Screen-share workflow and runtime telemetry", "EHR login and dashboard automation remain ongoing"]},
+  {title: "Enterprise MIS — Professional Work", description: "Backend contributions for HR, payroll, attendance, loans and medical workflows using ASP.NET Core, Dapper and SQL Server.", impact: ["Paginated APIs and filtered reporting", "Transactional updates and attachment handling", "Excel exports and stored-procedure optimization"]},
+  {title: "EMR & Claims — Professional Work", description: "Healthcare application integrations connecting imported claim data to patient, insurance and charge workflows.", impact: ["Excel import validation and duplicate checks", "Patient, payer and physician mapping", "HL7 parsing and application maintenance"]},
+  {title: "MaxChat — Professional Work", description: "Backend contributions to messaging and communication workflows within the MaxRemind ecosystem.", impact: ["SignalR chat events and APIs", "Real-time communication integrations", "Database query and workflow improvements"]},
+  {title: "LLM Support API — Practice Project", description: "A Python/FastAPI support service using Gemini, structured responses and order-service tool integrations.", impact: ["Intent, order ID and priority extraction", "RAG knowledge retrieval", "External API timeout and error handling"]},
 ];
 
 function Project() {
@@ -62,13 +17,11 @@ function Project() {
       <div className="max-w-7xl mx-auto">
         
         <h2 className="text-4xl font-bold text-center">
-          Enterprise <span className="text-[#00E5D0]">Case Studies</span>
+          Selected <span className="text-[#00E5D0]">Work</span>
         </h2>
 
         <p className="text-slate-400 text-center max-w-2xl mx-auto mt-4">
-          Production-ready backend systems built with ASP.NET Core,
-          SQL Server, and AI integrations — focused on scalability,
-          security, and performance optimization.
+          Professional contributions and practice projects across .NET, Python and AI. Employer work is described at a high level; internal source code and demos are not publicly linked.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">

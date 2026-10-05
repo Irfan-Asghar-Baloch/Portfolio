@@ -7,6 +7,7 @@ import Project from "./Components/Project";
 import Contact from "./Components/Contact";
 import ScrollDownButton from "./Components/ScrollDownButton";
 import WhyWorkWithMe from "./Components/WhyWorkWithMe";
+import Experience from "./Components/Experience";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <Home />
       <Aboutme />
       <Services />
+      <Experience />
       <Project />
       <WhyWorkWithMe />
       <Contact />
